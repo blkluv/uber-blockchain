@@ -1,4 +1,5 @@
 import { Navbar } from "../components/Navbar"
+import Map from "../components/Map"
 
 
 const style = {
@@ -14,7 +15,7 @@ export default function Home() {
         <div className={style.wrapper}>
             <Navbar />
             <div className={style.main}>
-                {/* <Map /> */}
+                <Map />
             </div>
             <div className={style.rideRequestContainer}>
                 <div className={style.rideRequest}>
