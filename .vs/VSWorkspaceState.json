@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\components",
+    "\\pages",
+    "\\pages\\api",
+    "\\styles"
   ],
-  "SelectedNode": "\\C:\\Users\\asus\\Source\\Repos\\uber-blockchain",
+  "SelectedNode": "\\yarn.lock",
   "PreviewInSolutionExplorer": false
 }
