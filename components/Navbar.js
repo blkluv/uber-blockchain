@@ -23,10 +23,8 @@ const Navbar = () => {
 
     const { currentAccount, connectWallet, currentUser } = useContext(UberContext)
 
-
     return (
         <div className={style.wrapper}>
-
             <div className={style.leftMenu}>
                 <div className={style.logo}>Uber</div>
                 <div className={style.menuItem}>Ride</div>
@@ -36,7 +34,7 @@ const Navbar = () => {
 
             <div className={style.rightMenu}>
                 <div className={style.menuItem}>Help</div>
-                <div className={style.menuItem}>{"G3P"}</div>
+                <div className={style.menuItem}>{currentUser.name?.split(' ')[0]}</div>
                 <div className={style.userImageContainer}>
                     <Image
                         className={style.userImage}
@@ -45,7 +43,18 @@ const Navbar = () => {
                         height={40}
                     />
                 </div>
-             )
+                {currentAccount ? (
+                    <div>
+                        {currentAccount.slice(0, 6)}...{currentAccount.slice(39)}
+                    </div>
+                ) : (
+                    <div className={style.loginButton} onClick={() => connectWallet()}>
+                        <BsPerson />
+                        <span className={style.loginText}>Log in</span>
+                    </div>
+                )}
+            </div>
+        </div>
+    )
 }
-
 export default Navbar
