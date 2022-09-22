@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react'
+﻿import { createContext, useState, useEffect } from 'react'
 import { faker } from '@faker-js/faker'
 
 export const UberContext = createContext()
@@ -20,6 +20,7 @@ export const UberProvider = ({ children }) => {
     let metamask
     const [selectedRide, setSelectedRide] = useState([])
     const [price, setPrice] = useState()
+    const [basePrice, setBasePrice] = useState()
 
     if (typeof window !== 'undefined') {
         metamask = window.ethereum
@@ -34,6 +35,30 @@ export const UberProvider = ({ children }) => {
         requestToGetCurrentUsersInfo(currentAccount)
     }, [currentAccount])
 
+    useEffect(() => {
+        if (!pickupCoordinates || !dropoffCoordinates) return
+            ; (async () => {
+                try {
+                    const response = await fetch('/api/map/getDuration', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            pickupCoordinates: `${pickupCoordinates[0]},${pickupCoordinates[1]}`,
+                            dropoffCoordinates: `${dropoffCoordinates[0]},${dropoffCoordinates[1]}`,
+                        }),
+                    })
+
+                    const data = await response.json()
+                    console.log(data.data, '🎨')
+                    setBasePrice(Math.round(await data.data))
+                } catch (error) {
+                    console.error(error)
+                }
+            })()
+
+    }, [pickupCoordinates, dropoffCoordinates])
     const checkIfWalletIsConnected = async () => {
         if (!window.ethereum) return
         try {
@@ -154,6 +179,8 @@ export const UberProvider = ({ children }) => {
                 selectedRide,
                 setSelectedRide,
                 setPrice,
+                basePrice,
+
             }}
         >
             {children}

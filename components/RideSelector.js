@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from 'react'
+﻿import { useEffect, useContext, useState } from 'react'
 import Image from 'next/image'
 
 import { UberContext } from '../context/uberContext'
@@ -26,13 +26,15 @@ const style = {
     price: `mr-[-0.8rem]`,
 }
 
-const basePrice = 1542
 
 const RideSelector = () => {
 
     const [carList, setCarList] = useState([])
-    const { selectedRide, setSelectedRide, setPrice } =
+    const { selectedRide, setSelectedRide, setPrice, basePrice } =
         useContext(UberContext)
+
+    console.log(basePrice, '🎃')
+
 
     useEffect(() => {
         ; (async () => {
