@@ -1,8 +1,6 @@
 ﻿# uber-blockchain
 Uber Web 3.0 Blockchain App with Next.js | Ethers.js | Sanity.io | Tailwind CSS
 
-📌📍 https://uber-blockchain-gepthecoder.vercel.app/ 📌📍
-#
 
 ![image](https://user-images.githubusercontent.com/38008294/170698950-3a86fc05-2487-436c-bb91-4eeb5a0404e8.png)
 #
