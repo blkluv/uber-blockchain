@@ -1,17 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\components",
+    "\\context",
     "\\pages",
     "\\pages\\api",
-    "\\studio",
-    "\\studio\\config",
-    "\\studio\\dist",
-    "\\studio\\dist\\static",
-    "\\studio\\plugins",
-    "\\studio\\schemas",
-    "\\studio\\static",
-    "\\styles"
+    "\\pages\\api\\db",
+    "\\pages\\api\\map",
+    "\\studio\\config\\@sanity",
+    "\\studio\\dist\\static"
   ],
-  "SelectedNode": "\\studio\\dist\\static\\css",
+  "SelectedNode": "\\pages\\api\\db\\getUserInfo.js",
   "PreviewInSolutionExplorer": false
 }

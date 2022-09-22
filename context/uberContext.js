@@ -18,6 +18,8 @@ export const UberProvider = ({ children }) => {
     /* Sanity User */
     const [currentUser, setCurrentUser] = useState([])
     let metamask
+    const [selectedRide, setSelectedRide] = useState([])
+    const [price, setPrice] = useState()
 
     if (typeof window !== 'undefined') {
         metamask = window.ethereum
@@ -148,7 +150,10 @@ export const UberProvider = ({ children }) => {
                 connectWallet,
                 currentAccount,
                 currentUser,
-
+                price,
+                selectedRide,
+                setSelectedRide,
+                setPrice,
             }}
         >
             {children}
