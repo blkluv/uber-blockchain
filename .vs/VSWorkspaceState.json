@@ -1,11 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\components",
     "\\pages",
     "\\pages\\api",
+    "\\studio",
+    "\\studio\\config",
+    "\\studio\\dist",
+    "\\studio\\dist\\static",
+    "\\studio\\plugins",
+    "\\studio\\schemas",
+    "\\studio\\static",
     "\\styles"
   ],
-  "SelectedNode": "\\components\\RideSelector.js",
+  "SelectedNode": "\\studio\\dist\\static\\css",
   "PreviewInSolutionExplorer": false
 }
